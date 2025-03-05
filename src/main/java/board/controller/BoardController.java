@@ -35,5 +35,32 @@ public class BoardController {
         return boardService.findAll();
     }
 
+    //[3] 개별조회
+    @GetMapping("/view")
+    public  BoardDto find(@RequestParam("bno") int bno){
+        System.out.println("BoardController.find");
+        System.out.println("bno = " + bno);
+        return boardService.find(bno);
+
+    }
+
+    //[4] 수정
+    @PutMapping("")
+    public boolean update(@RequestBody BoardDto boardDto){
+        System.out.println("BoardController.update");
+        System.out.println("boardDto = " + boardDto);
+        return boardService.update(boardDto);
+    }
+
+    //[5] 삭제
+    @DeleteMapping("")
+    public  boolean delete(@RequestParam("bno") int bno){
+        System.out.println("BoardController.delete");
+        System.out.println("bno = " + bno);
+
+        return boardService.delete(bno);
+    }
+
+
 
 }
