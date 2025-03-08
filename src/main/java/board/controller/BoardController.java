@@ -16,6 +16,8 @@ public class BoardController {
     @Autowired
     private BoardService boardService;
 
+
+    //나중에 사용 및 로그인 연결필요
     // [1] 등록
     @PostMapping("")
     public boolean save(@RequestBody BoardDto boardDto){
